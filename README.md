@@ -1,4 +1,5 @@
 # Sanjeev — Hospital & Healthcare Website
+**🔗 Live Demo:** [sanjeev-mocha.vercel.app](https://sanjeev-mocha.vercel.app/)
 
 A modern, single-page hospital/healthcare website built with React and Vite. Features a cinematic video hero, smooth scroll-triggered animations, and a full set of sections for showcasing a healthcare practice — from services and specialists to patient testimonials and appointment booking.
 
