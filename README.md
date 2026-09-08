@@ -1,16 +1,81 @@
-# React + Vite
+# Sanjeev — Hospital & Healthcare Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, single-page hospital/healthcare website built with React and Vite. Features a cinematic video hero, smooth scroll-triggered animations, and a full set of sections for showcasing a healthcare practice — from services and specialists to patient testimonials and appointment booking.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🎬 **Video hero section** with a looping background video and animated headline reveal
+- 🩺 **Doctor profiles** with photo cards for the specialist team
+- 🏥 **Services, health packages, and facilities** sections
+- 💬 **Patient testimonials**
+- 📅 **Appointment call-to-action** and contact section
+- ✨ Smooth, scroll-aware animations throughout, powered by Framer Motion
+- 📱 Fully responsive layout
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- [Framer Motion](https://www.framer.com/motion/) — animations
+- [Lucide React](https://lucide.dev/) — icons
+- [ESLint](https://eslint.org/) — linting
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── assets/
+│   └── doctors/           # Doctor profile photos
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx            # Video background hero
+│   ├── HeroVideoBackground.jsx
+│   ├── About.jsx
+│   ├── Services.jsx
+│   ├── Doctors.jsx         # Specialist profile cards
+│   ├── HealthPackages.jsx
+│   ├── WhyChooseUs.jsx
+│   ├── Testimonials.jsx
+│   ├── Facilities.jsx
+│   ├── AppointmentCTA.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/sanjeev.git
+cd sanjeev
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`.
+
+### Available Scripts
+
+| Command           | Description                              |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`      | Start the local development server        |
+| `npm run build`     | Build the production bundle to `dist/`     |
+| `npm run preview`   | Preview the production build locally       |
+| `npm run lint`      | Run ESLint across the project              |
+
+## License
+
+This project is provided as-is for demonstration purposes. Update this section with your chosen license (e.g. MIT) before publishing.
