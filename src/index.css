@@ -728,7 +728,8 @@ section { padding: var(--section-space) 0; }
 }
 .doctor-photo {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4/5;
+  height: auto;
   overflow: hidden;
   background: var(--soft-mint);
   position: relative;
@@ -737,6 +738,7 @@ section { padding: var(--section-space) 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform var(--dur-slow) var(--ease);
 }
 .doctor-card:hover .doctor-photo-img {
