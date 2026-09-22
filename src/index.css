@@ -361,7 +361,7 @@ section { padding: var(--section-space) 0; }
   height: 100%;
 }
 .mobile-menu::backdrop { background: rgba(0,0,0,0.5); }
-.mobile-menu a {
+.mobile-menu a:not(.btn) {
   color: var(--white);
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -370,15 +370,21 @@ section { padding: var(--section-space) 0; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
   display: block;
 }
-.mobile-menu a:hover { color: var(--warm-gold-light); }
-.mobile-menu .btn { margin-top: 16px; }
+.mobile-menu a:not(.btn):hover { color: var(--warm-gold-light); }
+.mobile-menu .btn { 
+  margin-top: 16px;
+  text-align: center;
+  display: block; 
+}
 .menu-close {
   align-self: flex-end;
-  background: none;
+  background: transparent;
   border: none;
   color: var(--white);
   padding: 8px;
   margin-bottom: 16px;
+  cursor: pointer;
+  outline: none;
 }
 
 @media (max-width: 1100px) {
