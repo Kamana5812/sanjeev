@@ -68,9 +68,8 @@ export default function Navbar() {
               type="button"
               className="nav-toggle"
               aria-label="Open menu"
-              aria-controls="mobile-navigation"
               aria-expanded={open}
-              onClick={() => { dialog.current.showModal(); setOpen(true) }}
+              onClick={() => setOpen(true)}
             >
               <Menu size={26} />
             </button>
@@ -78,33 +77,58 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <dialog
-        ref={dialog}
-        id="mobile-navigation"
-        className="mobile-menu"
-        aria-label="Mobile navigation"
-        onKeyDown={event => {
-          if (event.key !== 'Tab') return
-          const controls = [...event.currentTarget.querySelectorAll('button, a[href]')]
-          const first = controls[0]
-          const last = controls[controls.length - 1]
-          if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus() }
-          else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus() }
-        }}
-        onClick={event => { if (event.target === event.currentTarget) closeMenu() }}
-        onClose={() => {
-          setOpen(false)
-          if (trigger.current?.getClientRects().length) trigger.current.focus()
-        }}
-      >
-        <button type="button" className="menu-close" autoFocus aria-label="Close menu" onClick={closeMenu}>
-          <X size={28} />
-        </button>
-        {links.map(link => (
-          <a key={link.label} href={link.href} onClick={closeMenu}>{link.label}</a>
-        ))}
-        <a className="btn btn-gold" href="#contact" onClick={closeMenu}>Book Appointment</a>
-      </dialog>
+      {/* Mobile Navigation Overlay */}
+      {open && (
+        <div
+          className="mobile-menu"
+          role="dialog"
+          aria-label="Mobile navigation"
+          aria-modal="true"
+        >
+          <button 
+            type="button" 
+            className="menu-close" 
+            autoFocus 
+            aria-label="Close menu" 
+            onClick={() => setOpen(false)}
+          >
+            <X size={28} />
+          </button>
+          {links.map(link => (
+            <a 
+              key={link.label} 
+              href={link.href} 
+              onClick={(e) => {
+                setOpen(false)
+                // Fallback smooth scroll to handle overflow hidden delays
+                if (link.href.startsWith('#')) {
+                  e.preventDefault()
+                  setTimeout(() => {
+                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+                    window.history.pushState(null, '', link.href)
+                  }, 50)
+                }
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a 
+            className="btn btn-gold" 
+            href="#contact" 
+            onClick={(e) => {
+              setOpen(false)
+              e.preventDefault()
+              setTimeout(() => {
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+                window.history.pushState(null, '', '#contact')
+              }, 50)
+            }}
+          >
+            Book Appointment
+          </a>
+        </div>
+      )}
     </>
   )
 }
