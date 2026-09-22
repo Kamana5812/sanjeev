@@ -1,0 +1,76 @@
+/* ============================================================
+   SANJEEV HEALTH CLINIC — Claymorphism Design Tokens
+   Deep Teal + Healing Green + Warm Gold + Soft Mint
+   ============================================================ */
+
+:root {
+  /* === Brand Palette === */
+  --deep-teal: #0d4f4f;
+  --deep-teal-dark: #0a3d3d;
+  --deep-teal-light: #1a6b6b;
+  --healing-green: #2e8b57;
+  --healing-green-light: #3aa76d;
+  --healing-green-soft: #4ec685;
+  --warm-gold: #d4a742;
+  --warm-gold-dark: #c9952c;
+  --warm-gold-light: #e8c36e;
+  --soft-mint: #e8f5ee;
+  --soft-mint-light: #f0faf5;
+  --soft-mint-deep: #d4ede0;
+
+  /* === Neutral Palette === */
+  --white: #ffffff;
+  --cream: #fafcf9;
+  --gray-50: #f8faf9;
+  --gray-100: #f0f4f2;
+  --gray-200: #e2e8e5;
+  --gray-300: #c8d1cc;
+  --gray-400: #94a39a;
+  --gray-500: #6b7d73;
+  --gray-600: #4a5d52;
+  --gray-700: #354840;
+  --gray-800: #1e2d26;
+  --gray-900: #0f1a14;
+
+  /* === Semantic === */
+  --text-primary: #1a2e25;
+  --text-secondary: #4a5d52;
+  --text-muted: #6b7d73;
+  --text-on-dark: #f0faf5;
+  --text-on-teal: #e8f5ee;
+  --error: #dc3545;
+  --error-light: #fff0f0;
+  --success: #2e8b57;
+  --success-light: #e8f5ee;
+
+  /* === Clay Shadows (Multi-layer soft depth) === */
+  --clay-shadow-xs: 0 2px 4px rgba(13,79,79,0.06), 0 1px 2px rgba(13,79,79,0.04);
+  --clay-shadow-sm: 0 4px 8px rgba(13,79,79,0.08), 0 2px 4px rgba(13,79,79,0.04);
+  --clay-shadow-md: 0 8px 24px rgba(13,79,79,0.08), 0 4px 8px rgba(13,79,79,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+  --clay-shadow-lg: 0 16px 40px rgba(13,79,79,0.1), 0 6px 12px rgba(13,79,79,0.06), inset 0 1px 0 rgba(255,255,255,0.5);
+  --clay-shadow-xl: 0 24px 56px rgba(13,79,79,0.12), 0 8px 16px rgba(13,79,79,0.07), inset 0 2px 0 rgba(255,255,255,0.4);
+  --clay-shadow-inset: inset 0 2px 6px rgba(13,79,79,0.08), inset 0 1px 2px rgba(13,79,79,0.04);
+
+  /* === Typography === */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* === Layout === */
+  --container: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-space: clamp(60px, 8vw, 100px);
+
+  /* === Radius (Rounded for Clay feel) === */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 100px;
+
+  /* === Motion === */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 180ms;
+  --dur-base: 300ms;
+  --dur-slow: 500ms;
+}
